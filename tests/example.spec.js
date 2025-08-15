@@ -8,6 +8,12 @@ test('has title', async ({ page }) => {
   await expect(page).toHaveTitle(/Playwright/);
 });
 
+test('has button', async ({page}) =>{
+  await page.goto('https://playwright.dev/');
+
+  await page.getByRole('link', { name: 'Star microsoft/playwright on' }).click();
+});
+
 test('get started link', async ({ page }) => {
   await page.goto('https://playwright.dev/');
 
